@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+
+
+    {% block c %}
+    <style>
+        #card-bod{
+            height: 200px;
+        }
+        #iqoo{
+            object-fit: none; /* Do not scale the image */
+            object-position: center; /* Center the image within the element */
+            width: 250px;
+            height: 250px;
+            margin:auto;
+            margin-bottom: 1rem;
+            {% comment %} width: 100px;
+height: 100px;
+background-position: center center;
+background-repeat: no-repeat; {% endcomment %}
+        }
+    </style>
+    
+    <section class="pt-30px" id="home" style=margin-top:200px >
+        <div class="container">
+            <div class="row align-items-center">
+                <section class="bg-light p-5" id="service">
+                    <div class="container">
+                        <h1 class="text-center">Events</h1>
+                        <div class="row p-4 ">
+                            {% for i in events %}
+                            <div class="col-md-4 ">
+                                
+                                <div class="card text-center" style="width: 18rem;margin: 30px;">
+                                    
+                                    <img src="{{i.picture.url}}" class="card-img-top" alt="..." id="iqoo" >
+                                    <div class="card-body " id="card-bod" >
+                                      <h5 class="card-title">{{i.title}}</h5>
+                                      <h6 class="card-title">Venue:{{i.venue}},{{i.location}}</h6>
+                                      <h6 class="card-title">Date:{{i.eve_date}}</h6>
+                                      <p class="card-text">{{i.desc}}</p>
+                                      <!-- <p class="card-text">Physics</p>
+                                      <p class="card-text">Chemistry</p>
+                                      <p class="card-text">Biology</p>
+                                      <p class="card-text">Mathematics</p> -->
+                                      
+                                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                                    </div>
+                                    
+                                  </div>
+                                  
+                            </div>
+                            {% endfor %}
+                                       
+</div>
+
+</div>
+</section>
+{% include "footer.html" %}
+{% endblock c %}

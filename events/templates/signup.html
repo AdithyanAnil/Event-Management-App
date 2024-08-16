@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, 
+                         initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" 
+          href="{% static "style.css" %}">
+</head>
+
+<body>
+    <header>
+       
+    </header>
+
+    <!-- container div -->
+    <div class="container">
+
+       
+
+
+            <!-- signup form -->
+            <form action="" method="POST">
+                {% csrf_token %}
+            <div class="signup-box" style="margin-top: 105px;">
+                <input type="text" 
+                       class="name ele" 
+                       placeholder="Username" name="username">
+                <input type="email" 
+                       class="email ele" 
+                       placeholder="Enter your email" name="email">
+                <input type="password" 
+                       class="password ele" 
+                       placeholder="Enter a password" name="password">
+                <input type="password" 
+                       class="password ele" 
+                       placeholder="Confirm password"name="confirmpassword">
+                <button class="clkbtn text-white" name="submit">Signup</button>
+            </div>
+            </form>
+        </div>
+        {% for message in messages %}
+        <script>
+            alert('{{message}}');
+        </script>
+        {% endfor %}
+    </div>
+    <script src="{% static 'script.js'%}"></script>
+</body>
+</html>

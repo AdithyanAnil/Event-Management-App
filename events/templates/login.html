@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" 
+          content="width=device-width, 
+                         initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" 
+          href="{% static "style.css" %}">
+</head>
+
+<body>
+    <header>
+        
+    </header>
+
+    <!-- container div -->
+    <div class="container">
+
+        <!-- upper button section to select
+             the login or signup form -->
+        {% comment %} <div class="slider"></div>
+        <div class="btn">
+            <button class="login">Login</button>
+            <button class="signup">Signup</button>
+        </div> {% endcomment %}
+
+        <!-- Form section that contains the
+             login and the signup form -->
+        <div class="form-section">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <!-- login form -->
+            <div class="login-box">
+                <input type="text" 
+                       class="name ele" 
+                       placeholder="Username" name="lusername">
+                <input type="password"
+                       class="password ele" 
+                       placeholder="password" name="lpassword">
+                <button class="clkbtn" name>Login</button>
+            </div>
+        </form>
+        {% for message in messages %}
+        <script>
+            alert('{{message}}');
+        </script>
+        {% endfor %}
+
+            <!-- signup form -->
+            <form action="" method="POST">
+                {% csrf_token %}
+            <div class="signup-box">
+                <input type="text" 
+                       class="name ele" 
+                       placeholder="Username" name="username">
+                <input type="email" 
+                       class="email ele" 
+                       placeholder="Enter your email" name="email">
+                <input type="password" 
+                       class="password ele" 
+                       placeholder="Enter a password" name="password">
+                <input type="password" 
+                       class="password ele" 
+                       placeholder="Confirm password"name="confirmpassword">
+                <button class="clkbtn text-white" name="submit">Signup</button>
+            </div>
+            </form>
+        </div>
+        {% for message in messages %}
+        <script>
+            alert('{{message}}');
+        </script>
+        {% endfor %}
+    </div>
+    <script src="{% static 'script.js'%}"></script>
+</body>
+</html>
