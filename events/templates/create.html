@@ -9,7 +9,7 @@
 <form method='POST'>
     {% csrf_token %}
     Event:<input type="text" name="title" ><br><br>
-    Pic:<input type="image" name="picture" ><br><br>
+    Pic:<input type="file" name="picture" ><br><br>
     Date:<input type="date" name="date" ><br><br>
     Details:<input type="text" name="desc" ><br><br>
     <button type="submit">submit</button>
